@@ -62,6 +62,11 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.bg-card {
+    background-color: var(--oc-card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 /* Navbar */
 .navbar {
     background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
@@ -561,4 +566,24 @@ select option {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
     color: var(--oc-black);
+}
+
+.btn-quantity {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--oc-white);
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.btn-quantity:hover {
+    border-color: var(--oc-gold);
+    color: var(--oc-gold);
+    background: rgba(212, 175, 55, 0.1);
 }

@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
                              <span class="text-gold fw-bold">£${item.price}</span>
                         </div>
                         <div class="col-md-3 col-4 mt-3 mt-md-0">
-                            <div class="input-group input-group-sm w-75">
-                                <button class="btn btn-outline-secondary text-white border-secondary" onclick="updateQuantity(${index}, -1)">-</button>
-                                <input type="text" class="form-control bg-dark text-white text-center border-secondary" value="${item.quantity}" readonly>
-                                <button class="btn btn-outline-secondary text-white border-secondary" onclick="updateQuantity(${index}, 1)">+</button>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <button class="btn btn-quantity" onclick="updateQuantity(${index}, -1)">-</button>
+                                <input type="text" class="form-control bg-transparent text-white text-center border-0 p-0 mx-2" style="width: 40px;" value="${item.quantity}" readonly>
+                                <button class="btn btn-quantity" onclick="updateQuantity(${index}, 1)">+</button>
                             </div>
                         </div>
                         <div class="col-md-1 col-4 mt-3 mt-md-0 text-end">
