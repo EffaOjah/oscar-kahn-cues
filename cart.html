@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart - Oscar Cahn</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-black"
+      style="padding: 0.5rem 0"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Oscar Cahn Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="fa fa-bars text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Cues</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bespoke.html">Bespoke</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Craftsmanship</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="nav-link active" href="cart.html"
+                ><i class="fa fa-shopping-bag"></i>
+                <span
+                  id="cart-count"
+                  class="badge bg-gold text-dark rounded-pill"
+                  style="display: none"
+                  >0</span
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container section-padding mt-5">
+      <h1 class="display-5 mb-5" data-aos="fade-up">Your Bag</h1>
+
+      <div class="row g-5">
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+          <div id="cart-items-container">
+            <!-- Cart items will be injected here by JS -->
+            <div class="text-center py-5">
+              <p class="text-muted">Your bag is currently empty.</p>
+              <a href="products.html" class="btn btn-outline-gold mt-3"
+                >Continue Shopping</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="card bg-card border-secondary p-4 sticky-top"
+            style="top: 100px"
+          >
+            <h4
+              class="card-title mb-4"
+              style="font-family: var(--font-heading)"
+            >
+              Order Summary
+            </h4>
+            <div class="d-flex justify-content-between mb-2 text-muted">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">£0.00</span>
+            </div>
+            <div class="d-flex justify-content-between mb-4 text-muted">
+              <span>Shipping</span>
+              <span class="text-white">Free</span>
+            </div>
+            <div
+              class="d-flex justify-content-between mb-4 pt-3 border-top border-secondary"
+            >
+              <strong class="h5 mb-0 text-white">Total</strong>
+              <strong class="h5 mb-0 text-gold" id="cart-total">£0.00</strong>
+            </div>
+            <a
+              href="checkout.html"
+              id="checkout-btn"
+              class="btn btn-gold w-100 disabled"
+              >Proceed to Checkout</a
+            >
+            <div class="mt-4 text-center">
+              <p class="text-muted small mb-0">
+                <i class="fa fa-shield-alt me-2"></i>Secure Checkout
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p class="text-center text-muted small">
+          &copy; 2024 Oscar Cahn. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

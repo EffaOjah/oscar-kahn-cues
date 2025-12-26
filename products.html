@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Collection - Oscar Cahn</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-black"
+      style="padding: 0.5rem 0"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Oscar Cahn Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="fa fa-bars text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="products.html">Cues</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bespoke.html">Bespoke</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Craftsmanship</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="nav-link" href="#"
+                ><i class="fa fa-shopping-bag"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-dark-green text-center py-5 mt-5">
+      <div class="container py-5">
+        <h1 class="display-4" data-aos="fade-up">The Collection</h1>
+        <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">
+          Find the perfect partner for your game.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container section-padding">
+      <!-- Filters -->
+      <div class="row mb-5 justify-content-center" data-aos="fade-up">
+        <div class="col-md-8 text-center">
+          <div
+            class="d-flex flex-wrap justify-content-center gap-3"
+            role="group"
+            aria-label="Product Filters"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-gold active"
+              onclick="filterProducts('all')"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-gold"
+              onclick="filterProducts('beginner')"
+            >
+              Beginner
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-gold"
+              onclick="filterProducts('intermediate')"
+            >
+              Intermediate
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-gold"
+              onclick="filterProducts('elite')"
+            >
+              Elite
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4" id="product-grid">
+        <!-- Product 1 -->
+        <div class="col-md-4 product-item" data-category="beginner">
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <img
+                src="/images/limi-change-W_yMt46RtEk-unsplash.jpg"
+                alt="Beginner Cue"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">The Initial</h3>
+              <span class="card-price">£149.00</span>
+              <a
+                href="product-detail.html"
+                class="btn btn-outline-gold btn-sm mt-3"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-4 product-item" data-category="beginner">
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <img
+                src="/images/liam-ward-Y72MQgLprz4-unsplash.jpg"
+                alt="Beginner Cue 2"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">The Rookie</h3>
+              <span class="card-price">£179.00</span>
+              <a
+                href="product-detail.html"
+                class="btn btn-outline-gold btn-sm mt-3"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-md-4 product-item" data-category="intermediate">
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <img
+                src="images/saint-rambo-BhvoOhQMv5I-unsplash.jpg"
+                alt="Intermediate Cue"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">The Clubman</h3>
+              <span class="card-price">£299.00</span>
+              <a
+                href="product-detail.html"
+                class="btn btn-outline-gold btn-sm mt-3"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-md-4 product-item" data-category="intermediate">
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <img
+                src="/images/jonas-thijs-ih2IlFTDpjY-unsplash.jpg"
+                alt="Intermediate Cue 2"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">The Marksman</h3>
+              <span class="card-price">£349.00</span>
+              <a
+                href="product-detail.html"
+                class="btn btn-outline-gold btn-sm mt-3"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-md-4 product-item" data-category="elite">
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <img
+                src="/images/geoffrey-moffett-u__jkX3fpIc-unsplash.jpg"
+                alt="Elite Cue"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">The Grandmaster</h3>
+              <span class="card-price">£599.00</span>
+              <a
+                href="product-detail.html"
+                class="btn btn-outline-gold btn-sm mt-3"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-md-4 product-item" data-category="elite">
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <img
+                src="/images/engin-akyurt-EVpGFTS1rns-unsplash.jpg"
+                alt="Elite Cue 2"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">The Legend</h3>
+              <span class="card-price">£899.00</span>
+              <a
+                href="product-detail.html"
+                class="btn btn-outline-gold btn-sm mt-3"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Partial - Keeping it identical manual copy for now as per static requirement -->
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <a href="index.html" class="d-block mb-4">
+              <img
+                src="images/logo.png"
+                alt="Oscar Cahn Logo"
+                style="height: 50px; filter: brightness(1.1)"
+              />
+            </a>
+            <p class="text-muted">
+              Premium handcrafted cues for the dedicated player. Experience the
+              difference quality makes to your game.
+            </p>
+            <div class="social-links mt-4">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-2 offset-md-1">
+            <h5 class="text-white mb-4">Shop</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="products.html" class="footer-link">All Cues</a>
+              </li>
+              <li class="mb-2">
+                <a href="bespoke.html" class="footer-link">Bespoke Orders</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Accessories</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Gift Cards</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-white mb-4">Support</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="contact.html" class="footer-link">Contact Us</a>
+              </li>
+              <li class="mb-2"><a href="#" class="footer-link">Shipping</a></li>
+              <li class="mb-2"><a href="#" class="footer-link">Returns</a></li>
+              <li class="mb-2"><a href="#" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white mb-4">Newsletter</h5>
+            <p class="text-muted small">
+              Subscribe for the latest releases and exclusive offers.
+            </p>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control newsletter-input"
+                placeholder="Your email"
+              />
+              <button class="btn btn-gold" type="button">
+                <i class="fa fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary my-5" />
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="text-muted small mb-0">
+              &copy; 2024 Oscar Cahn. All rights reserved.
+            </p>
+            <div class="mt-2">
+              <a
+                href="legal/privacy.html"
+                class="text-muted small me-3 text-decoration-none"
+                >Privacy Policy</a
+              >
+              <a
+                href="legal/terms.html"
+                class="text-muted small text-decoration-none"
+                >Terms of Service</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <i class="fab fa-cc-stripe fa-2x text-muted me-3"></i>
+            <i class="fab fa-cc-visa fa-2x text-muted me-3"></i>
+            <i class="fab fa-cc-mastercard fa-2x text-muted me-3"></i>
+            <i class="fab fa-paypal fa-2x text-muted"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      function filterProducts(category) {
+        // Update buttons
+        document
+          .querySelectorAll(".btn-group .btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Filter logic
+        const items = document.querySelectorAll(".product-item");
+        items.forEach((item) => {
+          if (category === "all" || item.dataset.category === category) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+        // Re-trigger AOS layout refresh if needed
+        setTimeout(() => AOS.refresh(), 100);
+      }
+    </script>
+  </body>
+</html>

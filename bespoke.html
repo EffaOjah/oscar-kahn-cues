@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bespoke Orders - Oscar Cahn</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-black"
+      style="padding: 0.5rem 0"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Oscar Cahn Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="fa fa-bars text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Cues</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="bespoke.html">Bespoke</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Craftsmanship</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="nav-link" href="#"
+                ><i class="fa fa-shopping-bag"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bespoke-hero">
+      <div class="container hero-content" data-aos="fade-up">
+        <h1 class="text-gradient-gold">Design Your Legacy</h1>
+        <p class="lead text-white">Crafted to your exact specifications.</p>
+      </div>
+    </section>
+
+    <div
+      class="container section-padding pt-0"
+      style="position: relative; z-index: 2"
+    >
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+          <form
+            class="bg-card p-4 p-md-5 border border-secondary shadow-lg"
+            id="bespokeForm"
+            style="
+              background: #121212;
+              border-color: rgba(255, 255, 255, 0.05) !important;
+            "
+          >
+            <!-- Step 1 -->
+            <h5 class="form-section-title">01. The Player</h5>
+            <div class="row g-4 mb-5">
+              <div class="col-md-6">
+                <label class="form-label text-muted small text-uppercase"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="e.g. John Doe"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small text-uppercase"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="e.g. john@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <h5 class="form-section-title">02. The Specifications</h5>
+            <div class="row g-4 mb-5">
+              <div class="col-md-4">
+                <label class="form-label text-muted small text-uppercase"
+                  >Discipline</label
+                >
+                <select
+                  class="form-select"
+                  id="cueType"
+                  onchange="toggleOptions()"
+                >
+                  <option value="snooker">Snooker (Standard)</option>
+                  <option value="pool">English Pool</option>
+                  <option value="american">American Pool</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label text-muted small text-uppercase"
+                  >Wood Selection</label
+                >
+                <select class="form-select">
+                  <option>North American Ash</option>
+                  <option>Grade A Maple</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label text-muted small text-uppercase"
+                  >Length</label
+                >
+                <select class="form-select">
+                  <option>57 inches</option>
+                  <option>58 inches (Standard)</option>
+                  <option>59 inches</option>
+                  <option>Custom</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small text-uppercase"
+                  >Tip Size</label
+                >
+                <select class="form-select">
+                  <option>9.0mm</option>
+                  <option>9.5mm</option>
+                  <option>10.0mm</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small text-uppercase"
+                  >Weight Target</label
+                >
+                <select class="form-select">
+                  <option>Light (17oz - 18oz)</option>
+                  <option>Medium (18oz - 19oz)</option>
+                  <option>Heavy (19oz+)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- American Pool Dynamic Section -->
+            <div
+              id="americanOptions"
+              style="display: none"
+              class="mb-5 p-4 border border-secondary bg-black"
+            >
+              <h6 class="text-gold mb-3">American Pool Specifics</h6>
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="form-label text-muted small text-uppercase"
+                    >Joint Type</label
+                  >
+                  <select class="form-select">
+                    <option>Radial Pin</option>
+                    <option>3/8 x 10</option>
+                    <option>Uni-Loc</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <h5 class="form-section-title">03. The Details</h5>
+            <div class="mb-5">
+              <label class="form-label text-muted small text-uppercase"
+                >Additional Requests / Splicing</label
+              >
+              <textarea
+                class="form-control"
+                rows="4"
+                placeholder="Describe your vision. E.g. 'Tulipwood splices with double gold veneers', 'Engraving on butt plate', etc."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg w-100">
+              Request Your Quote
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <a href="index.html" class="d-block mb-4">
+              <img
+                src="images/logo.png"
+                alt="Oscar Cahn Logo"
+                style="height: 50px; filter: brightness(1.1)"
+              />
+            </a>
+            <p class="text-muted">
+              Premium handcrafted cues for the dedicated player. Experience the
+              difference quality makes to your game.
+            </p>
+            <div class="social-links mt-4">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-2 offset-md-1">
+            <h5 class="text-white mb-4">Shop</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="products.html" class="footer-link">All Cues</a>
+              </li>
+              <li class="mb-2">
+                <a href="bespoke.html" class="footer-link">Bespoke Orders</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Accessories</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link">Gift Cards</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-white mb-4">Support</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="contact.html" class="footer-link">Contact Us</a>
+              </li>
+              <li class="mb-2"><a href="#" class="footer-link">Shipping</a></li>
+              <li class="mb-2"><a href="#" class="footer-link">Returns</a></li>
+              <li class="mb-2"><a href="#" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white mb-4">Newsletter</h5>
+            <p class="text-muted small">
+              Subscribe for the latest releases and exclusive offers.
+            </p>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control newsletter-input"
+                placeholder="Your email"
+              />
+              <button class="btn btn-gold" type="button">
+                <i class="fa fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary my-5" />
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="text-muted small mb-0">
+              &copy; 2024 Oscar Cahn. All rights reserved.
+            </p>
+            <div class="mt-2">
+              <a
+                href="legal/privacy.html"
+                class="text-muted small me-3 text-decoration-none"
+                >Privacy Policy</a
+              >
+              <a
+                href="legal/terms.html"
+                class="text-muted small text-decoration-none"
+                >Terms of Service</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <i class="fab fa-cc-stripe fa-2x text-muted me-3"></i>
+            <i class="fab fa-cc-visa fa-2x text-muted me-3"></i>
+            <i class="fab fa-cc-mastercard fa-2x text-muted me-3"></i>
+            <i class="fab fa-paypal fa-2x text-muted"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function toggleOptions() {
+        const cueType = document.getElementById("cueType").value;
+        const americanOptions = document.getElementById("americanOptions");
+
+        if (cueType === "american") {
+          americanOptions.style.display = "block";
+        } else {
+          americanOptions.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

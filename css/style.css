@@ -1,0 +1,548 @@
+/* Oscar Cahn - Premium Snooker Cues
+   Core Styles & Theme
+*/
+
+:root {
+    /* Color Palette */
+    --oc-gold: #D4AF37;
+    --oc-gold-dark: #b4942b;
+    --oc-black: #050505;
+    --oc-dark-green: #081c15; /* Deeper Green */
+    --oc-card-bg: #121212;
+    --oc-white: #ffffff;
+    --oc-text-muted: #cccccc; /* Lightened for better contrast */
+    --oc-dark-grey: #1e1e1e; /* Input background */
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--oc-black);
+    color: var(--oc-white);
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--oc-white);
+    letter-spacing: 0.5px;
+}
+
+.text-gold {
+    color: var(--oc-gold) !important;
+}
+
+/* Override Bootstrap text-muted for dark theme */
+.text-muted {
+    color: var(--oc-text-muted) !important;
+}
+
+.text-gradient-gold {
+    background: linear-gradient(to right, #cfc09f 0%, #ffecb3 20%, #bf9e4a 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-black {
+    background-color: var(--oc-black) !important;
+}
+
+.bg-dark-green {
+    background-color: var(--oc-dark-green) !important;
+}
+
+.bg-light-dark {
+    background-color: #0d0d0d;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    padding: 2rem 0;
+    transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--oc-white) !important;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 70px; /* Increased size */
+    mix-blend-mode: screen; /* Makes black background transparent */
+    filter: brightness(1.1); /* Slight boost */
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin: 0 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0px;
+    left: 50%;
+    background-color: var(--oc-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--oc-gold) !important;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Buttons */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(5, 5, 5, 0.98);
+        padding: 1rem;
+        margin-top: 1rem;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-link {
+        margin: 0.5rem 0;
+        display: inline-block;
+    }
+    
+    .navbar-toggler {
+        border-color: var(--oc-gold);
+        outline: none;
+        box-shadow: none;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212, 175, 55, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+.btn-gold {
+    background: linear-gradient(45deg, var(--oc-gold), #f3d470);
+    color: var(--oc-black);
+    border: none;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn-gold:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 0%; height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: all 0.3s ease;
+    opacity: 0.2;
+}
+
+.btn-gold:hover:after {
+    width: 100%;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+    color: var(--oc-black);
+}
+
+.btn-outline-gold {
+    background-color: transparent;
+    color: var(--oc-gold);
+    border: 1px solid var(--oc-gold);
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--oc-gold);
+    color: var(--oc-black);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    /* Background handled in HTML to ensure image path works locally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 991px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,0.95); /* Increased opacity */
+    letter-spacing: 1px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 576px) {
+    .hero-content p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Product Cards */
+.product-card {
+    background-color: var(--oc-card-bg);
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+
+.product-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-price {
+    color: var(--oc-gold);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Footer */
+footer {
+    background-color: #050505;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 4rem 0 2rem;
+}
+
+.footer-link {
+    color: var(--oc-text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--oc-gold);
+}
+
+.newsletter-input {
+    background: transparent;
+    border: 1px solid var(--oc-text-muted);
+    color: white;
+    border-radius: 0;
+    padding: 0.75rem;
+}
+
+.newsletter-input:focus {
+    background: transparent;
+    border-color: var(--oc-gold);
+    color: white;
+    box-shadow: none;
+}
+
+/* Features */
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--oc-gold);
+    margin-bottom: 1.5rem;
+}
+
+/* Bespoke Form */
+.form-control, .form-select {
+    background-color: var(--oc-dark-grey);
+    border: 1px solid #333;
+    color: white;
+    border-radius: 0;
+    padding: 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--oc-dark-grey);
+    border-color: var(--oc-gold);
+    color: white;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+select option {
+    background-color: var(--oc-black);
+    color: white;
+}
+
+/* Animations */
+@keyframes goldShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Utility */
+.section-padding {
+    padding: 6rem 0;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--oc-gold);
+    margin: 1.5rem auto;
+}
+
+/* Features Section */
+.feature-card {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--oc-gold);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.feature-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--oc-gold);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+    background: var(--oc-gold);
+    color: var(--oc-black);
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: #0a0a0a;
+    padding: 3rem 2rem;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.testimonial-quote-icon {
+    font-size: 3rem;
+    color: rgba(212, 175, 55, 0.2);
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-family: serif;
+}
+
+/* Bespoke CTA */
+.bespoke-cta {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/hero-bg.png'); /* Fallback/Reuse hero or specific image if available */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+/* Bespoke Page */
+.bespoke-hero {
+    background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%),
+                url('../images/carla-oliveira-21FqSKZQGzI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: -50px; /* Overlap with content */
+    z-index: 1;
+}
+
+.bespoke-hero h1 {
+    font-size: 4.5rem;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+    .bespoke-hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .bespoke-hero {
+        background-attachment: scroll; /* Fix for mobile jitter */
+    }
+    
+    .bespoke-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.form-section-title {
+    color: var(--oc-gold);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+/* Product Detail Premium Styles */
+.price-tag {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--oc-gold);
+    margin-bottom: 1.5rem;
+}
+
+.specs-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.btn-premium-cta {
+    background: linear-gradient(45deg, var(--oc-gold), #f3d470, var(--oc-gold));
+    background-size: 200% auto;
+    color: var(--oc-black);
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    width: 100%;
+    transition: all 0.3s ease;
+    animation: goldShine 3s infinite linear;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+.btn-premium-cta:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+    color: var(--oc-black);
+}
