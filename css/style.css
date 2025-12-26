@@ -213,14 +213,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero-section {
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     height: 100vh;
-    /* Background handled in HTML to ensure image path works locally */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        background-attachment: scroll;
+        background-position: center center;
+    }
 }
 
 .hero-content {
